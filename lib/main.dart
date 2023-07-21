@@ -39,26 +39,10 @@ class DrumPage extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('bongo');
-                      },
-                      child: Container(
-                        color: Colors.blueAccent,
-                      ),
-                    ),
+                    child: buildDrumpPad('bongo', Colors.blueAccent),
                   ),
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('bip');
-                      },
-                      child: Container(
-                        color: Colors.redAccent,
-                      ),
-                    ),
+                    child: buildDrumpPad('bip', Colors.redAccent),
                   ),
                 ],
               ),
@@ -67,26 +51,10 @@ class DrumPage extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('clap1');
-                      },
-                      child: Container(
-                        color: Colors.pinkAccent,
-                      ),
-                    ),
+                    child: buildDrumpPad('clap1', Colors.pinkAccent),
                   ),
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('clap2');
-                      },
-                      child: Container(
-                        color: Colors.blueGrey,
-                      ),
-                    ),
+                    child: buildDrumpPad('clap2', Colors.blueGrey),
                   ),
                 ],
               ),
@@ -95,26 +63,10 @@ class DrumPage extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('clap3');
-                      },
-                      child: Container(
-                        color: Colors.orangeAccent,
-                      ),
-                    ),
+                    child: buildDrumpPad('clap3', Colors.orangeAccent),
                   ),
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('crash');
-                      },
-                      child: Container(
-                        color: Colors.lightBlueAccent,
-                      ),
-                    ),
+                    child: buildDrumpPad('crash', Colors.lightBlueAccent),
                   ),
                 ],
               ),
@@ -123,32 +75,29 @@ class DrumPage extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('how');
-                      },
-                      child: Container(
-                        color: Colors.pinkAccent,
-                      ),
-                    ),
+                    child: buildDrumpPad('how', Colors.pinkAccent),
                   ),
                   Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
-                      onPressed: () {
-                        sesOynat('oobah');
-                      },
-                      child: Container(
-                        color: Colors.brown,
-                      ),
-                    ),
+                    child: buildDrumpPad('oobah', Colors.brown),
                   ),
                 ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  //Refactoring
+  TextButton buildDrumpPad(String ses, Color renk) {
+    return TextButton(
+      style: TextButton.styleFrom(padding: EdgeInsets.all(8)),
+      onPressed: () {
+        sesOynat(ses);
+      },
+      child: Container(
+        color: renk,
       ),
     );
   }
